@@ -1,10 +1,10 @@
 import 'package:bake_project/pallet.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import '../widgets/widgets.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key});
+  const Home({super.key, Key? keyy});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,9 @@ class Home extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Container(
+                    const SizedBox(
                       height: 150,
-                      child: const Center(
+                      child: Center(
                         child: Text(
                           "_Bake",
                           style: KHeading,
@@ -34,44 +34,39 @@ class Home extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Column(
                         children: [
-                          const Column(
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              TextInput(
+                              const TextInput(
                                 hint: 'Enter Your Email Id ',
                                 icon: Icons.mail,
                                 inputType: TextInputType.emailAddress,
                                 inputAction: TextInputAction.next,
                               ),
-                              PasswardInput(
+                              const PasswardInput(
                                 hint: 'Enter Your Password ',
                                 icon: Icons.lock,
                                 inputAction: TextInputAction.done,
                               ),
-                              Text(
-                                "Forgot Password?",
-                                style: Kbody,
+                              TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  "Forgot Password?",
+                                  style: Kbodya,
+                                ),
                               )
                             ],
                           ),
                           Column(
                             children: [
-                              SizedBox(height: 100),
-                              Container(
-                                width: double.infinity,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        primary: Colors.blue),
-                                    onPressed: () {},
-                                    // ignore: prefer_const_constructors
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 16),
-                                      child: Text(
-                                        "LogIn",
-                                        style: Kbodya,
-                                      ),
-                                    )),
+                              const SizedBox(height: 50),
+                              const Loginbtn(),
+                              SignInButton(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
+                                Buttons.Google,
+                                text: "Sign up with Google",
+                                onPressed: () {},
                               )
                             ],
                           )
